@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Сформировать" id="80">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.КнопкаСформировать</CommandName>
+				<Picture>
+					<xr:Abs>Picture.png</xr:Abs>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сформировать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="СформироватьExtendedTooltip" id="83"/>
+			</Button>
+			<Button name="Закрыть" id="82">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ЗакрытьExtendedTooltip" id="84"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Заголовок" id="1">
+			<HorizontalStretch>true</HorizontalStretch>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные для расчета параметров статистической выборки</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalAlign>Center</HorizontalAlign>
+			<ContextMenu name="ЗаголовокКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ЗаголовокExtendedTooltip" id="85"/>
+		</LabelDecoration>
+		<UsualGroup name="Шапка" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаExtendedTooltip" id="86"/>
+			<ChildItems>
+				<InputField name="Организация" id="4">
+					<DataPath>Объект.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="87"/>
+				</InputField>
+				<InputField name="ДатаНач" id="7">
+					<DataPath>ДатаНач</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период с</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаНачКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ДатаНачExtendedTooltip" id="88"/>
+				</InputField>
+				<InputField name="ДатаКон" id="10">
+					<DataPath>ДатаКон</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>по</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаКонКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ДатаКонExtendedTooltip" id="89"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ПараметрыВыборки" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры выборки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры выборки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ПараметрыВыборкиExtendedTooltip" id="90"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="17">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="Группа1ExtendedTooltip" id="91"/>
+					<ChildItems>
+						<InputField name="МаксЭлементВыборки" id="19">
+							<DataPath>МаксЭлементВыборки</DataPath>
+							<ContextMenu name="МаксЭлементВыборкиКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="МаксЭлементВыборкиExtendedTooltip" id="92"/>
+						</InputField>
+						<LabelDecoration name="элементов" id="22">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>элементов</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="элементовКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="элементовExtendedTooltip" id="93"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа2" id="25">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="Группа2ExtendedTooltip" id="94"/>
+					<ChildItems>
+						<InputField name="МинЭлементВыборки" id="27">
+							<DataPath>МинЭлементВыборки</DataPath>
+							<ContextMenu name="МинЭлементВыборкиКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="МинЭлементВыборкиExtendedTooltip" id="95"/>
+						</InputField>
+						<LabelDecoration name="элементов1" id="30">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>элементов</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="элементов1КонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="элементов1ExtendedTooltip" id="96"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа3" id="33">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="Группа3ExtendedTooltip" id="97"/>
+					<ChildItems>
+						<InputField name="ПроцентОшибки" id="35">
+							<DataPath>ПроцентОшибки</DataPath>
+							<ContextMenu name="ПроцентОшибкиКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ПроцентОшибкиExtendedTooltip" id="98"/>
+						</InputField>
+						<LabelDecoration name="элементов2" id="38">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>%</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="элементов2КонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="элементов2ExtendedTooltip" id="99"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ДанныеРасчета" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные для расчета параметров статистической выборки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры выборки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ДанныеРасчетаExtendedTooltip" id="100"/>
+			<ChildItems>
+				<UsualGroup name="Группа4" id="43">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="Группа4ExtendedTooltip" id="101"/>
+					<ChildItems>
+						<InputField name="УровеньСущественности" id="45">
+							<DataPath>УровеньСущественности</DataPath>
+							<ContextMenu name="УровеньСущественностиКонтекстноеМеню" id="46"/>
+							<ExtendedTooltip name="УровеньСущественностиExtendedTooltip" id="102"/>
+						</InputField>
+						<LabelDecoration name="элементов3" id="48">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>рублей</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="элементов3КонтекстноеМеню" id="49"/>
+							<ExtendedTooltip name="элементов3ExtendedTooltip" id="103"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа5" id="51">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="Группа5ExtendedTooltip" id="104"/>
+					<ChildItems>
+						<InputField name="МинЭлементВыборки1" id="53">
+							<DataPath>КоэффициентПроверки</DataPath>
+							<ContextMenu name="МинЭлементВыборки1КонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="МинЭлементВыборки1ExtendedTooltip" id="105"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ВыборСчета" id="56">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор счета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ВыборСчетаExtendedTooltip" id="106"/>
+			<ChildItems>
+				<Button name="Кнопка1" id="58">
+					<Type>UsualButton</Type>
+					<Width>31</Width>
+					<CommandName>Form.Command.КнопкаВыбратьСчета</CommandName>
+					<Font ref="style:NormalTextFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать счета</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Кнопка1ExtendedTooltip" id="107"/>
+				</Button>
+				<LabelField name="Поле1" id="60">
+					<DataPath>Счета</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Height>12</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="Поле1КонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="Поле1ExtendedTooltip" id="108"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Сохранение" id="63">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СохранениеExtendedTooltip" id="109"/>
+			<ChildItems>
+				<UsualGroup name="Группа6" id="65">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа6ExtendedTooltip" id="110"/>
+					<ChildItems>
+						<InputField name="АдресСохранения" id="69">
+							<DataPath>АдресСохранения</DataPath>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="АдресСохраненияКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="АдресСохраненияExtendedTooltip" id="111"/>
+							<Events>
+								<Event name="OnChange">АдресСохраненияПриИзменении</Event>
+								<Event name="StartChoice">АдресСохраненияНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа7" id="67">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа7ExtendedTooltip" id="112"/>
+					<ChildItems>
+						<InputField name="ШаблонФайла" id="72">
+							<DataPath>ШаблонФайла</DataPath>
+							<ContextMenu name="ШаблонФайлаКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="ШаблонФайлаExtendedTooltip" id="113"/>
+						</InputField>
+						<LabelDecoration name="Декорация1" id="75">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>+ "номер счета" + "ods"</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="76"/>
+							<ExtendedTooltip name="Декорация1ExtendedTooltip" id="114"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.AuditAutomationManaged</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Организация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>Организация</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДатаНач" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата нач</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<Save>
+				<Field>ДатаНач</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДатаКон" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата кон</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<Save>
+				<Field>ДатаКон</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="МинЭлементВыборки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Минимальное количество элементов статистической выборки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>МинЭлементВыборки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="МаксЭлементВыборки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Максимальное количество элементов статистической выборки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>МаксЭлементВыборки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ПроцентОшибки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Процент размера допустимой ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>ПроцентОшибки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="УровеньСущественности" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уровень существенности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>УровеньСущественности</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="КоэффициентПроверки" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коэффициент проверки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>КоэффициентПроверки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Счета" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счета</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+			<Save>
+				<Field>Счета</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="АдресСохранения" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес сохранения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>АдресСохранения</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ШаблонФайла" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить как</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ШаблонФайла</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ТаблицаСчетовХранилище" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица счетов хранилище</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ТаблицаСчетовХранилище</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КнопкаВыбратьСчета" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопка выбрать счета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопка выбрать счета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КнопкаВыбратьСчета</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнопкаСформировать" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопка Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопка сформировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КнопкаСформировать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>
